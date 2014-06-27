@@ -19,6 +19,7 @@ module.exports = function(grunt) {
             SCOtitle: 'SCO Title',
             moduleTitle: 'Module',
             launchPage: 'index.html',
+            filter: '',
             path: './'
         });
         
@@ -74,7 +75,7 @@ module.exports = function(grunt) {
                 } else {
                     var tObj = {
                         file: {
-                            '@href': filepath,
+                            '@href': filepath.replace(options.filter, ''),
                         },
                     };
                     xmlTokens.fileArr.push(tObj);
